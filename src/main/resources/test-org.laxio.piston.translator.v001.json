@@ -1,0 +1,6 @@
+{
+  "Implementation-Title": "ProtocolTranslator",
+  "Implementation-Version": "1.0-IDE",
+  "Implementation-Vendor": "Laxio",
+  "Main-Class": "org.laxio.piston.translator.v001.ProtocolTranslator"
+}

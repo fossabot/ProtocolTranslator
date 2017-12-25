@@ -1,0 +1,6 @@
+{
+  "Implementation-Title": "${project.name}",
+  "Implementation-Version": "${describe}",
+  "Implementation-Vendor": "${project.organization.name}",
+  "Main-Class": "${translator.main}"
+}
