@@ -24,11 +24,23 @@
             <artifactId>protocol</artifactId>
             <version>340.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.laxio.piston</groupId>
+            <artifactId>piston-api</artifactId>
+            <version>1.12.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20171018</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <properties>
         <buildtag.prefix>git-${project.version}-</buildtag.prefix>
-        <translator.main>org.laxio.piston.translator.v001.ProtocolTranslator</translator.main>
+        <translator.main>org.laxio.piston.translator.v001.ProtocolTranslatorV001</translator.main>
     </properties>
 
     <build>
