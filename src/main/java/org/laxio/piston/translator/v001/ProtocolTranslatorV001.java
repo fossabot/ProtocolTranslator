@@ -1,5 +1,6 @@
 package org.laxio.piston.translator.v001;
 
+import org.laxio.piston.piston.protocol.Packet;
 import org.laxio.piston.piston.translator.ProtocolTranslator;
 import org.laxio.piston.piston.versioning.PistonModule;
 import org.laxio.piston.piston.versioning.Version;
@@ -25,6 +26,13 @@ public class ProtocolTranslatorV001 implements ProtocolTranslator {
     @Override
     public Version getNativeVersion() {
         return this.nativeModule.getVersion();
+    }
+
+    @Override
+    public boolean matches(Packet packet) {
+        // TODO: check packet protocol version and check if
+        // translated >= packet > native
+        return false;
     }
 
 }
