@@ -11,6 +11,7 @@
 
     <artifactId>protocol-translator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>Protocol Translator</name>
 
     <dependencies>
         <!-- reference 2 protocol versions, origin and translated -->
