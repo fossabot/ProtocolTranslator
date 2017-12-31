@@ -2,5 +2,8 @@
   "Implementation-Title": "${project.name}",
   "Implementation-Version": "${describe}",
   "Implementation-Vendor": "${project.organization.name}",
+  "Specification-Title": "Minecraft",
+  "Specification-Version": "${translator.minecraft.version}",
+  "Specification-Vendor": "Mojang",
   "Main-Class": "${translator.main}"
 }

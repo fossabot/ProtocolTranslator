@@ -41,7 +41,9 @@
 
     <properties>
         <buildtag.prefix>git-${project.version}-</buildtag.prefix>
+        <translator.package>org.laxio.piston.translator.v001</translator.package>
         <translator.main>org.laxio.piston.translator.v001.ProtocolTranslatorV001</translator.main>
+        <translator.minecraft.version></translator.minecraft.version>
     </properties>
 
     <build>
