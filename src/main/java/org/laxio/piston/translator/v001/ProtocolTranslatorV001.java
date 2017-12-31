@@ -30,7 +30,7 @@ public class ProtocolTranslatorV001 implements ProtocolTranslator {
     }
 
     @Override
-    public Version getNativeMinecraftVersion() {
+    public Version getTranslatedMinecraftVersion() {
         return this.minecraft.getVersion();
     }
 
