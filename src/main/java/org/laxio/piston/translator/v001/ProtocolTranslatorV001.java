@@ -2,37 +2,41 @@ package org.laxio.piston.translator.v001;
 
 import org.laxio.piston.piston.protocol.Packet;
 import org.laxio.piston.piston.translator.ProtocolTranslator;
-import org.laxio.piston.piston.versioning.PistonModule;
-import org.laxio.piston.piston.versioning.Version;
 import org.laxio.piston.protocol.v340.StickyProtocolV340;
-
-import java.io.IOException;
 
 public class ProtocolTranslatorV001 implements ProtocolTranslator {
 
-    private final PistonModule nativeModule;
-    private final PistonModule translatedModule;
+    private final StickyProtocolV340 nativeProtocol;
+    private final StickyProtocolV340 translatedProtocol;
 
-    public ProtocolTranslatorV001() throws IOException {
-        this.nativeModule = PistonModule.build(StickyProtocolV340.class, "Implementation");
-        this.translatedModule = PistonModule.build(StickyProtocolV340.class, "Implementation");
+    public ProtocolTranslatorV001(StickyProtocolV340 nativeProtocol, StickyProtocolV340 translatedProtocol) {
+        this.nativeProtocol = nativeProtocol;
+        this.translatedProtocol = translatedProtocol;
     }
 
     @Override
-    public Version getTranslatedVersion() {
-        return this.translatedModule.getVersion();
+    public int getNativeVersion() {
+        return this.nativeProtocol.getVersion();
     }
 
     @Override
-    public Version getNativeVersion() {
-        return this.nativeModule.getVersion();
+    public int getTranslatedVersion() {
+        return this.translatedProtocol.getVersion();
     }
 
     @Override
     public boolean matches(Packet packet) {
-        // TODO: check packet protocol version and check if
-        // translated >= packet > native
-        return false;
+        return packet.getVersion() == nativeProtocol.getVersion() && packet.getVersion() == translatedProtocol.getVersion();
+    }
+
+    @Override
+    public Packet translateToNative(Packet packet) {
+        throw new UnsupportedOperationException("This translator is not configured to translate packets");
+    }
+
+    @Override
+    public Packet translateFromNative(Packet packet) {
+        throw new UnsupportedOperationException("This translator is not configured to translate packets");
     }
 
 }
